@@ -6,21 +6,36 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://skyway.io/dist/v2/0.3/peer.js"></script>
     <script type="text/javascript" src="videochat.js"></script>
+    <script src="three.js"></script>
     <style>
         video{
-            width: 300px;
-            height: 150px;
+            width: 200px;
             border-radius: 100px;
-            border: 5px #000000 solid;
-            opacity: 0.5;
+        }
+        .video{
+            position: relative;
+        }
+        video_in{
+        }
+        .effect{
+            width: 200px;
+            height: 115px;
+            position: absolute;
+            top:-25px;
+        }
+        .effect img{
+            width: 200px;
         }
     </style>
 </head>
 <body>
     <h1>Simple Video Chat</h1>
-    <div>
+    <div class="video">
+       <div class="video_in">
         <video id="my-video" autoplay></video>
+       </div>
         <video id="peer-video" autoplay></video>
+        <div class="effect"><img src="window.png" alt="窓"></div>
     </div>
     <div>
         <p>MyID: <span id="my-id">-</span></p>
@@ -31,5 +46,6 @@
         <button id="call-start">Start Call</button>
         <button id="call-end">End Call</button>
     </div>
+    <div class="main"></div>
 </body>
 </html>
